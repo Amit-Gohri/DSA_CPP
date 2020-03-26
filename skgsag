@@ -1,0 +1,60 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+int length(ListNode* X) {   
+    //to calculate length of list
+    ListNode* traverse = X;
+    int length = 0;
+    while (traverse != NULL)
+    {
+        traverse = traverse->next;
+        length++;
+    }
+    return length;
+}
+
+ void point(ListNode* 1 , ListNode* 2){
+     
+    if(i!=2)
+    {
+        // 2->next = NULL;
+        ListNode* future1 = 1->next;
+        if(bool){
+            1->next = 2;
+            bool = true;
+            1 = future1;
+            
+        }
+        if(bool){
+            2->next = 1;
+            bool = false;
+            ListNode* traverse= 1
+            while(traverse->next->next!=NULL){
+                traverse= traverse->next;
+            }
+            2 = traverse;
+        }
+        point (1,2);
+
+
+    }
+ }
+ListNode* Solution::reorderList(ListNode* A) {
+    int len = length(A);
+    if(A == NULL) return A;
+    ListNode* 1 = A;
+    ListNode* 2 = A;
+    while(2->next!=NULL){
+        2 = 2->next;
+    }
+    
+    int bool = 0;
+    point(1,2);
+    
+    
+}
