@@ -24,3 +24,4 @@ label:
         goto label;
     }
 }
+// submited on codeshef problem
