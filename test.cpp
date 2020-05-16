@@ -1,6 +1,6 @@
 //current visual studio code
 #include<iostream>
-completely changes the line
+#include<vector>
 #include<stack>
 using namespace std;
 int main() {
