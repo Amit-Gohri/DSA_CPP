@@ -1,18 +1,22 @@
-#include <iostream>
- 
-void doNothing(int&) // Don't worry about what & is for now, we're just using it to trick the compiler into thinking variable x is used
-{
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> maxset(vector<int> &A) {
+    int size = A.size();
+    set<int> sizes;
+    for (int i = 0; i < size; i++)
+    {
+        if (A[i]<0)
+            continue;
+        {
+            
+        }
+        
+        vector<int> result;
+        
+    }
+    
 }
- 
-int main()
-{
-    // define an integer variable named x
-    int x; // this variable is uninitialized
- 
-   // doNothing(x); // make the compiler think we're assigning a value to this variable
- 
-    // print the value of x to the screen (who knows what we'll get, because x is uninitialized)
-    std::cout << x;
- 
-    return 0;
-}
+
+
+
+

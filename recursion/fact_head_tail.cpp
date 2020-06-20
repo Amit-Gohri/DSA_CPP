@@ -17,8 +17,7 @@ int tail(int n,int i,int a){
 }
 int main(){
     int a;
-    cout<<tail(5,1,1)
-    
+    cout << tail(5, 1, 1);
 }
 
 // # Termination statement must not be an expression
