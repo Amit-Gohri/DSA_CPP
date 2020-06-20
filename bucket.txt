@@ -1,2 +1,0 @@
-bucket is a built in function of unordered_map container
-which tells the position of the element in the hashtable itself
