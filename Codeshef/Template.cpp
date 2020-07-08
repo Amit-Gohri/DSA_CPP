@@ -7,6 +7,10 @@
 #define vvi vector<vector<int>>
 
 using namespace std;
+
+//solve function
+
+
 int main(){
     ios_base::sync_with_stdio(false);   //to turn off synchronisation
     cin.tie(NULL);                      //related to stream flush

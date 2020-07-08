@@ -1,0 +1,9 @@
+#Object Oriented Programing
+we group functions and variables in an Object this is known as "encapsulation"
+class gives the blue print of the objects
+ABSTRACTION-
+    we abstract various methods and variables to simplyfy the interface
+INHERITANCE-
+    eliminates redundand code
+POLYMORPHISM-
+     

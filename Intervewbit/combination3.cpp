@@ -10,7 +10,6 @@ void helper(int n, int k, vector<vector<int>> &solution, vector<int> crt, int i 
     else crt.push_back(i++);
     int l = i;
     while (n - i )
-    {
         i++;
         helper(n, k, solution, crt, i);
     }

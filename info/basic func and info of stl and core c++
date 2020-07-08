@@ -1,0 +1,15 @@
+arr[n] //not possible but  
+arr* = new int[n]{}; //possible 
+
+//Bucket method
+bucket is a built in method of unordered_map container  
+which tells the position of the element in the hashtable itself
+
+//std::iota
+Fills the range [first, last) with sequentially increasing values, starting with value and repetitively
+ evaluating ++value.
+
+2D vector in C++ with user defined size
+vector<vector<int> > vec( n , vector<int> (m, 0));
+
+

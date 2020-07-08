@@ -1,0 +1,15 @@
+﻿  Source.cpp
+D:\cpp\visual studio\debug\Source.cpp(25,26): error C2664: 'void std::vector<std::set<int,std::less<int>,std::allocator<int>>,std::allocator<std::set<int,std::less<int>,std::allocator<int>>>>::push_back(_Ty &&)': cannot convert argument 1 from 'std::vector<int,std::allocator<int>>' to 'const _Ty &'
+          with
+          [
+              _Ty=std::set<int,std::less<int>,std::allocator<int>>
+          ]
+D:\cpp\visual studio\debug\Source.cpp(25,26): message : Reason: cannot convert from 'std::vector<int,std::allocator<int>>' to 'const _Ty'
+          with
+          [
+              _Ty=std::set<int,std::less<int>,std::allocator<int>>
+          ]
+D:\cpp\visual studio\debug\Source.cpp(25,23): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\vector(717,10): message : see declaration of 'std::vector<std::set<int,std::less<int>,std::allocator<int>>,std::allocator<std::set<int,std::less<int>,std::allocator<int>>>>::push_back'
+D:\cpp\visual studio\debug\Source.cpp(52,15): error C2440: 'return': cannot convert from 'std::vector<std::set<int,std::less<int>,std::allocator<int>>,std::allocator<std::set<int,std::less<int>,std::allocator<int>>>>' to 'std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>'
+D:\cpp\visual studio\debug\Source.cpp(52,5): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
