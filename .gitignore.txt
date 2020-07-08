@@ -1,1 +1,1 @@
-.vscode/
+visual studio/
