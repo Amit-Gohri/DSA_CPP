@@ -18,7 +18,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void help(vector<int>& A, vector<set<int>>& sol, vector<int> crt, int B, int no_of_child, int it, int sum)
+void help(vector<int>& A, vector<vector<int>>& sol, vector<int> crt, int B, int no_of_child, int it, int sum)
 {
     if (sum == B)
     {
