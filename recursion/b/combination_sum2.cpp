@@ -1,19 +1,21 @@
-// Given a set of candidate numbers (C) and a tAget number (T), find all unique combinations in C where the candidate numbers sums to T.
+// Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
 
-// The same repeated number may be chosen from C unlimited number of times.
+// Each number in C may only be used once in the combination.
 
 //  Note:
-// All numbers (including tAget) will be positive integers.
+// All numbers (including target) will be positive integers.
 // Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
-// The combinations themselves must be sorted in ascending order.
-// CombinationA > CombinationB iff (a1 > b1) OR (a1 = b1 AND a2 > b2) OR … (a1 = b1 AND a2 = b2 AND … ai = bi AND ai+1 > bi+1)
 // The solution set must not contain duplicate combinations.
-// Example,
-// Given candidate set 2,3,6,7 and tAget 7,
+// Example :
+
+// Given candidate set 10,1,2,7,6,1,5 and target 8,
+
 // A solution set is:
 
-// [2, 2, 3]
-// [7]
+// [1, 7]
+// [1, 2, 5]
+// [2, 6]
+// [1, 1, 6]
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -35,7 +37,7 @@ void help(vector<int> &A, vector<vector<int>> &sol, vector<int> crt, int B, int 
         {
 
             crt.push_back(A[it]);
-            help(A, sol, crt, B, A.size() - it, it, sum + A[it]);
+            help(A, sol, crt, B, no_of_child-1, it+1, sum + A[it]);
             child--;
             it++;
             crt.pop_back(); //for backtracking
@@ -48,9 +50,10 @@ vector<vector<int>> combinationSum(vector<int> &A, int B)
     vector<vector<int>> sol;
     int sum(0);
     sort(A.begin(), A.end());
-    A.erase(unique(A.begin(), A.end()), A.end());
+    // A.erase(unique(A.begin(), A.end()), A.end());
     vector<int> crt;
     help(A, sol, crt, B, A.size(), 0, sum);
+    sol.erase(unique(sol.begin(), sol.end()), sol.end());
     return sol;
 }
 
@@ -59,3 +62,4 @@ int main()
     vector<int> A = {10, 1, 2, 7, 6, 1, 5};
     vector<vector<int>> ans = combinationSum(A, 8);
 }
+how to remove dulplicates

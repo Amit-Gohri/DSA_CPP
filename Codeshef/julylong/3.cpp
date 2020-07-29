@@ -1,5 +1,5 @@
 //paste the link
-//
+// https://www.codechef.com/JULY20B/problems/ADAKING
 
 #include<bits/stdc++.h>
 
@@ -26,11 +26,12 @@ int main(){
     cin.tie(NULL);                      //related to stream flush
     int t;
     cin >> t;
-    while (t--)
+     while (t--)
     {
-        int N;
-        cin >> N;
-        while (N--)
+        char ar[8][8]{'.'};
+        int k;
+        cin >> k;
+        while (k--)
         {
             
         }
