@@ -1,4 +1,4 @@
-//https://www.interviewbit.com/problems/ways-to-decode/
+    //https://www.interviewbit.com/problems/ways-to-decode/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -51,10 +51,34 @@ long long rec(string A, int n)
 
 int dp(string A)
 {
-    vector<int> t(A.size() + 1 , 1);
-    
-    
-
+    vector<int> t(A.size() + 1, 1);
+    // if (A[A.size()-1] == '0')
+    // {
+    //     t[A.size()-1] = 0;
+    // }
+    for (int i = A.size(); i > -1; i--)
+    {
+        if (i == A.size())
+        {
+            t[i] == 1;
+        }
+        else
+        {
+            if ((A[i] == '1' || (A[i] == '2' && A[i + 1] < '7')) && i < A.size() - 1)
+            {
+                t[i] = t[i + 1] + t[i + 2];
+            }
+            else if (A[i] == '0')
+            {
+                t[i] = 0;
+            }
+            else
+            {
+                t[i] = t[i + 1];
+            }
+        }
+    }
+    return t[0];
 }
 
 int dec(string A)
@@ -71,5 +95,5 @@ int dec(string A)
 
 int main()
 {
-    cout << dec("2314");
-}
+    cout << dp("1");
+}   
