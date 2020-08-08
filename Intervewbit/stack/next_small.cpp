@@ -10,13 +10,11 @@ void pv(vector<int> &A)
         cout << i << " ";
     }
 }
-
-
 vector<int> sol(vector<int> A)
 {
     vector<int> ans(A.size());
     stack<int> s;
-    for (int i = 0; i < A.size(); i++)
+    for (int i = A.size()-1; i > -1; i--)
     {
         if (s.empty())
         {           

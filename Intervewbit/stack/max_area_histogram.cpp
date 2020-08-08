@@ -1,32 +1,24 @@
-//https://www.interviewbit.com/problems/maxspprod/
+// https://www.interviewbit.com/problems/largest-rectangle-in-histogram/
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void pv(vector<int> A)
+vector<int> nxt_sml(vector<int>& A)
 {
-    for (int i : A)
-    {
-        cout << i << " ";
-    }
-}
-
-vector<long long> nxt_grt(vector<int>& A)
-{
-    vector<long long> ans(A.size());
-    stack<long long> s;
+    vector<int> ans(A.size());
+    stack<int> s;
     for (int i = A.size() - 1; i > -1; i--)
     {
         if (s.empty())
         {
             s.push(i);
-            ans[i] = 0;
+            ans[i] = A.size();
         }
         else
         {
-            if (A[i] < A[s.top()]) //34, 35, 27, 42, 5, 28, 39, 20, 28
+            if (A[i] > A[s.top()]) //34, 35, 27, 42, 5, 28, 39, 20, 28
             {
-                ans[i] = s.top();            //1 4 3 4
+                ans[i] = s.top(); //1 4 3 4
                 s.push(i);
             }
             else
@@ -36,11 +28,11 @@ vector<long long> nxt_grt(vector<int>& A)
                     s.pop();
                     if (s.empty())
                     {
-                        ans[i] = 0;
+                        ans[i] = A.size();
                         s.push(i);
                         break;
                     }
-                    else if (A[i] < A[s.top()])
+                    else if (A[i] > A[s.top()])
                     {
                         ans[i] = s.top();
                         s.push(i);
@@ -56,22 +48,22 @@ vector<long long> nxt_grt(vector<int>& A)
     }
     return ans;
 }
-vector<long long> pre_grt(vector<int>& A)
+vector<int> pre_sml(vector<int>& A)
 {
-    vector<long long> ans(A.size());
-    stack<long long> s;
+    vector<int> ans(A.size());
+    stack<int> s;
     for (int i = 0; i < A.size(); i++)
     {
         if (s.empty())
         {
             s.push(i);
-            ans[i] = 0;
+            ans[i] = -1;
         }
         else
         {
-            if (A[i] < A[s.top()]) //34, 35, 27, 42, 5, 28, 39, 20, 28
+            if (A[i] > A[s.top()]) //34, 35, 27, 42, 5, 28, 39, 20, 28
             {
-                ans[i] = s.top();
+                ans[i] = s.top(); //1 4 3 4
                 s.push(i);
             }
             else
@@ -81,11 +73,11 @@ vector<long long> pre_grt(vector<int>& A)
                     s.pop();
                     if (s.empty())
                     {
-                        ans[i] = 0;
+                        ans[i] = -1;
                         s.push(i);
                         break;
                     }
-                    else if (A[i] < A[s.top()])
+                    else if (A[i] > A[s.top()])
                     {
                         ans[i] = s.top();
                         s.push(i);
@@ -101,20 +93,22 @@ vector<long long> pre_grt(vector<int>& A)
     }
     return ans;
 }
-int maxprod(vector<int> A)
-{
-    vector<long long> left(pre_grt(A));
-    vector<long long> right(nxt_grt(A));
-    long long mo = 1000000007;
-    long long _max(-1);
+int max_area(vector<int> A)
+{ //for every bar we have to find nearest smaller bar
+
+    vector<int> pre = pre_sml(A);
+    vector<int> nxt = nxt_sml(A);
+    int width(0);
+    int max_area(0);
     for (int i = 0; i < A.size(); i++)
     {
-        _max = max(_max, left[i] * right[i]);
+        width = nxt[i] - pre[i] - 1;
+        max_area = max(width * A[i], max_area);
     }
-    return _max%mo;
+    return max_area;
 }
 
 int main()
 {
-    cout << maxprod({ 1, 4, 3, 4 });
+    cout << max_area({ 2, 1, 5, 6, 2, 3 });
 }
