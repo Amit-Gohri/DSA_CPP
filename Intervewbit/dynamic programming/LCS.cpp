@@ -15,7 +15,8 @@ int lcs(string A, string B, vector<vector<int>>& dp)
             }
             else
             {
-                dp[i][j] = (dp[i + 1][j] > dp[i][j + 1]) ? dp[i + 1][j] : dp[i][j + 1]; //max(dp[n + 1][m]), dp[n][m + 1]);
+
+                dp[i][j] = max(dp[i + 1][j], dp[i][j + 1]);
             }
         }
     }
