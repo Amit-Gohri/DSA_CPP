@@ -10,11 +10,22 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-int kth_small(TreeNode* A)
-{
-    if (A!=NULL)
+
+void inorder(TreeNode* A, vector<int> in)
+{    
+    if (A == NULL)
     {
-        kth_small(A)
+        return;
     }
-    
+    inorder(A->left, in);
+    in.push_back(A->val);
+    inorder(A->right, in);
 }
+
+int kth_small(TreeNode* A, int k)
+{
+    vector<int> in;
+    inorder(A, in);
+    return in[k - 1];
+}
+
