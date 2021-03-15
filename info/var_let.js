@@ -1,6 +1,6 @@
 
-//var is function/global scoped 
-//let is blocked scoped
+//var is function scoped if defined in function/global scoped id defined globally scoped 
+//let is blocked scoped{}
 
 
 var a = 4;

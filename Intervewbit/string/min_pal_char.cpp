@@ -2,22 +2,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int min_pal(string &A)
-{
-    int min(0);
+int solve(string A){
     int size = A.size();
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size-1; i++)
     {
-        //next exist or not
-        if (i<=size-1-mi)
-        {
-            if (A[i] == A[i+1])
-            {
-                
-            }
-            
-        }
         
     }
     
+}
+
+int min_pal(string &A)
+{
+
 }

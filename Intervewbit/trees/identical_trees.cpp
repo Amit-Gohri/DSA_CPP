@@ -36,6 +36,7 @@ bool iden_tree(TreeNode *A, TreeNode *B)
     // {
     //     return 0;
     // }
+    
     if (A == NULL && B == NULL)
     {
         return 1;

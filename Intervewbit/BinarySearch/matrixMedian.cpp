@@ -1,6 +1,6 @@
 //https://www.interviewbit.com/problems/matrix-median/
 
-// not solved( count += upper_bound(A[i].begin(), A[i].end(), mid) - A[i].begin() -1;) cannot comprehend this line
+// not solved( count += upper_bound(A[i].begin(), A[i].end(), mid) - A[i].begin()) cannot comprehend this line
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,7 +8,7 @@ using namespace std;
 int matmed(vector<vector<int>> A)
 {
     int min(INT_MAX), max(INT_MIN);
-    int desired = (A.size() * A[0].size()) / 2;
+    int desired = (A.size() * A[0].size()+1) / 2;
     for (int i = 0; i < A.size(); i++)
     {
         // Finding the minimum element
@@ -29,7 +29,7 @@ int matmed(vector<vector<int>> A)
 
         for (int i = 0; i < A.size(); i++)
         {
-            count += upper_bound(A[i].begin(), A[i].end(), mid) - A[i].begin() -1;
+            count += upper_bound(A[i].begin(), A[i].end(), mid) - A[i].begin();
         }
         if (count < desired)
         {
@@ -37,7 +37,7 @@ int matmed(vector<vector<int>> A)
         }
         else
         {
-            max = mid - 1;
+            max = mid ;
         }
     }
     return mid;
