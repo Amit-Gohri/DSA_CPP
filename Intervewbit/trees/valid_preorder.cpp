@@ -109,14 +109,7 @@ bool valid_bst(vector<int> &A)
     vector<int> pre_smaller = presmaller(A);
     for (int i = 0; i < A.size(); i++)
     {
-        if (next_greater[i] >= pre_smaller[i])
-        {
-            continue;
-        }
-        else
-        {
-            return 0;
-        }
+        
         
     }
     return 1;

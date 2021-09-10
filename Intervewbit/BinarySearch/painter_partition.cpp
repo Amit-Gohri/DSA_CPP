@@ -68,5 +68,5 @@ int painters_partition(vector<int> A, int B, int C)
 
 int main()
 {
-    cout << painters_partition({ 1,8,11,3  }, 2, );
+    cout << painters_partition({ 1,8,11,3  }, 2, 3);
 }

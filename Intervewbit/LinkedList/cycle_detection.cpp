@@ -27,7 +27,7 @@ struct ListNode {
 class Solution
 {
 public:
-    ListNode *detectCycle(ListNode *head)
+    ListNode *detectCycle(ListNode *A)
     {
         ListNode *tort = A;
         ListNode *hare = A;

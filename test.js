@@ -1,1 +1,1 @@
-var a = 56;
+console.log(global)

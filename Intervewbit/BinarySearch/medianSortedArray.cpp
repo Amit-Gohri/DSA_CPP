@@ -10,6 +10,7 @@ double median(vector<int> nums1, vector<int> nums2)
     //consider the case for odd number of elements
     while (lo <= hi)
     {
+        //we are selecting i and j is chosen automatically to match number of elements
         int mid = (hi + lo) / 2;
         int i, j;
         i = mid;
@@ -43,7 +44,7 @@ double median(vector<int> nums1, vector<int> nums2)
     }
     return 0.0;
 }
-
+    
 int main() {
     cout << median({ 1, 4, 5 }, { 2, 3 });
 }

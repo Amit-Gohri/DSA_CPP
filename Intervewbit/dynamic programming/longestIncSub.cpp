@@ -1,34 +1,24 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int Lis(int ar[], int n)
+
+int LIS(vector<int> &nums)
 {
-    if (n==0)
+    vector<int> dp(nums.size(), 0);
+    dp[nums.size() - 1] = 1;
+    for (int i = nums.size() - 2; i >= 0; i--)
     {
-        return 1;
-    }
-    else
-    {
-        int max_lj(INT_MIN);
-        for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < nums.size(); j++)       
         {
-            int Li = Lis(ar, i);
-            if(ar[i]<ar[n])
+            if (nums[i] < nums[j])
             {
-                max_lj = max(max_lj, Li);
+                dp[i] = max(dp[i], dp[j] + 1);
             }
-            //compute l[i]
-            //maintain max and check
         }
     }
-    
-    
-}
-
-
-
-int main()
-{
-    int ar[] = {1, 11, 2, 10, 4, 5, 2, 1};
-
-
+    int result(0);
+    for (int i = 0; i < nums.size(); i++)
+    {
+        result = max(result, dp[i]);
+    }
+    return result;
 }

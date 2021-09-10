@@ -9,9 +9,14 @@ struct TreeNode
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-void rec(vector<TreeNode *> parent, vector<vector<TreeNode *>> &ans)
+void rec(vector<TreeNode *> parent, vector<vector<int>> &ans)
 {
     int size = parent.size();
+    if (size == 0)
+    {
+        return;
+    }
+
     vector<TreeNode *> child;
     for (int i = 0; i < size; i++)
     {
@@ -30,24 +35,24 @@ void rec(vector<TreeNode *> parent, vector<vector<TreeNode *>> &ans)
 
         a.push_back(child[i]->val);
     }
-    ans.push_back(a);
+    if(a.size()>0) ans.push_back(a);
 
-    for (int i = 0; i < child.size(); i++)
-    {
-        if (child[i] != NULL)
-        {
-            rec(child, ans);
-        }
-    }
+    rec(child, ans);
 }
 
 void rec1(vector<vector<TreeNode *>> ans)
 {
 }
 
-void level_order(TreeNode *A)
+vector<vector<int> > level_order(TreeNode *A)
 {
     vector<TreeNode *> parent;
-    parent.push_back(A);
-    rec(parent, {{}});
+    vector<vector<int>> ans;
+    if (A)
+    {
+        ans.push_back({A->val});
+        parent.push_back(A);
+    }
+    rec(parent, ans);
+    return ans;
 }

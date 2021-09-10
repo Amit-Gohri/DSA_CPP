@@ -19,21 +19,18 @@ void pv(vector<int> &A)
 }
 
 //solve function
+void solve(){
+    
+}
 
 int main(){
     ios_base::sync_with_stdio(false);   //to turn off synchronisation
     cin.tie(NULL);                      //related to stream flush
-    // int t;
-    // cin >> t;
-    // while (t--)
-    // {
-    //     int N;
-    //     cin >> N;
-    //     while (N--)
-    //     {
-            
-    //     }
-        
-    // }
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
     
 }
