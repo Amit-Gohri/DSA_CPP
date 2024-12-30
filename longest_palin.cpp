@@ -13,6 +13,7 @@ void print_ans(string& A, int s, int e)
 
 int main()
 {
+    int amit;
     string A;
     cin >> A;
     string ans;
